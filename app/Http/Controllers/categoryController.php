@@ -32,7 +32,7 @@ public function updateCategory(Request $request) {
         'category' => $request->category,
         'slug' => Str::slug($request->category),
     ]);
-    return redirect()->back()->with('succsess', "data $request->category Berhasil Diupdate !");
+    return redirect()->back()->with('succsess   ', "data $request->category Berhasil Diupdate !");
 }
 public function deleteCategory(Request $request) {
 $category = Category::findOrFail($request->id);

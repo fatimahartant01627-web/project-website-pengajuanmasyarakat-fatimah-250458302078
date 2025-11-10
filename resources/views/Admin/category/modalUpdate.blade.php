@@ -1,29 +1,36 @@
 <div class="modal fade" id="edit{{ $fatimah->id }}">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title">Update data category</h4>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-                <form action="{{ route('update.category') }}" method="POST">
-                @csrf
-                @method('PUT')
-                <div class="form-group">
-                  <input type="hidden" value="{{ $fatimah->id }}" name="id">
-                    <input type="text" name="category" value="{{ $fatimah->category }}" class="form-control" placeholder="Masukkan data category">
-            </div>
-           
-            <div class="modal-footer justify-content-between">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-primary">Save changes</button>
-            </div>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      
+      <div class="modal-header">
+        <h4 class="modal-title">Update Data User</h4>
+        <button type="button" class="close" data-dismiss="modal">
+          <span>&times;</span>
+        </button>
+      </div>
 
-          </div>
-                </form>
+      <form action="{{ route('update.category', $fatimah->id) }}" method="POST" enctype="multipart/form-data">
+        @csrf
+        @method('PUT')
 
+        <div class="modal-body">
           
+          
+          <div class="form-group">
+            <label>Nama Lengkap</label>
+            <input type="hidden" name="id" value="{{ $fatimah->id }}">
+            <input type="text" name="category" value="{{ $fatimah->category }}" class="form-control">
+          </div>
+
         </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Update</button>
+        </div>
+
+      </form>
+
     </div>
+  </div>
+</div>

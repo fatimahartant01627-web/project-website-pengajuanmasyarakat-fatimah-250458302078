@@ -1,18 +1,18 @@
-<div class="modal fade" id="delete{{ $fatimah->id }}">
+<div class="modal fade" id="delete{{ $f->id }}">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h4 class="modal-title">Tambah data category</h4>
+              <h4 class="modal-title">Tambah data user</h4>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body">
-                <form action="{{ route('delete.category') }}" method="POST">
+                <form action="{{ route('user.delete') }}" method="POST">
                 @csrf
                 @method('DELETE')
-                <input type="hidden" name="id" value="{{ $fatimah->id }}">
-                <p>Apakah anda yakin ingin menghapus data {{ $fatimah->category }} ?</p>
+                <input type="hidden" name="id" value="{{ $f->id }}">
+                <p>Apakah anda yakin ingin menghapus data {{ $f->category }} ?</p>
             </div>
            
             <div class="modal-footer justify-content-between">
@@ -23,6 +23,4 @@
            </form>
 
         </div>
-</div>
-</div>
 </div>

@@ -27,7 +27,7 @@
       <form action="{{ route('login') }}" method="post">
         @csrf
         <div class="input-group mb-3">  
-          <input type="email" name="email" class="form-control" requairedplaceholder="Email">
+          <input type="email" name="email" class="form-control" required placeholder="Masukkan Email Anda">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>

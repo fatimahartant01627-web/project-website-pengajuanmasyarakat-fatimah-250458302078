@@ -5,12 +5,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Table Data category</h1>
+            <h1 class="m-0">Table Data Complain</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Dashboard v1</li>
+              <li class="breadcrumb-item active">Table Data Response</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -25,9 +25,9 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <a href=""  class="btn btn-primary"  data-toggle="modal" data-target="#modal-default">
+                <a href="{{ route('form.aduan') }}"  class="btn btn-primary">
                   
-                + Tambah category</a>
+                Tambahkan aduan mu, Disini prenn!!</a>
                 <div class="card-tools">
                   <div class="input-group input-group-sm" style="width: 150px;">
                     <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
@@ -62,26 +62,24 @@
                   <thead>
                     <tr>
                       <th>No</th>
-                      <th>kategory</th>
-                      <th>slug</th>
+                      <th>No Aduan</th>
+                      <th>Nama Pengadu</th>
+                      <th>Judul Aduan</th>
+                      <th>Admin Response</th>
                       <th>Action</th>
-                    </tr>
-                    
+                    </tr>   
                   </thead>
                   <tbody>
-                    @foreach($category as $fatimah)
-                        <tr>
+                     @foreach ($response as $row )
+                     <tr>
                         <td>{{ $loop->iteration }}</td>
-                        <td>{{ $fatimah->category }}</td>
-                        <td>{{ $fatimah->slug }}</td>
-                        <td>
-                          <a href="" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#edit{{ $fatimah->id }}"><i class="fas fa-solid fa-edit"></i></a>
-                          @include('Admin.category.modalUpdate')
-                          <a href="" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete{{ $fatimah->id }}"><i class="fas fa-solid fa-trash"></i></a>
-                          @include('Admin.category.modalDelete')
-                        </td>
-                        </tr>
-                    @endforeach
+                        <td>{{ $row->dataKomplen->no_aduan }}</td>
+                        <td>{{ $row->dataKomplen->namaPengadu->name }}</td>
+                        <td>{{ $row->dataKomplen->judul }}</td>
+                        <td>{{ $row->namaAdmin->name }}</td>
+                     </tr>
+                         
+                     @endforeach
                   </tbody>                
                 </table>
               </div>
